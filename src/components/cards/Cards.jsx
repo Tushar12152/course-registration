@@ -22,12 +22,12 @@ const Cards = () => {
            
          
              {/* <Card></Card> */}
-            <div className="grid gap-6 grid-cols-3 w-6/8">
+            <div className="grid gap-6 md:grid-cols-2 grid-cols-1 lg:grid-cols-3 w-6/8">
             {
                 cards.map(card=><Card key={card.id} card={card}></Card>)
              }
             </div>
-            <div className="border-2 w-2/8">
+            <div className=" w-2/8">
              <h1  className="font-bold text-4xl text-center">cart-section</h1>
             </div>
         </div>

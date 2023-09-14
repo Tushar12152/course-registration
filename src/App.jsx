@@ -7,9 +7,9 @@ function App() {
  
 
   return (
-    <>
+    <div className='bg-gray-200'>
       <Cards></Cards>
-    </>
+    </div>
   )
 }
 
