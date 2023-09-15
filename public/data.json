@@ -3,7 +3,7 @@
       "id": 1,
       "img": "https://i.ibb.co/NCcX5sN/Rectangle-2-2.png",
       "course_name": "Introduction to C Programming",
-      "credit": 1,
+      "credit": 5,
       "price": 15000,
       "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
     },
@@ -11,7 +11,7 @@
       "id": 2,
       "img": "https://i.ibb.co/6DKPbGq/Rectangle-2-3.png",
       "course_name": "introduction to Algorithms",
-      "credit": 2,
+      "credit": 5,
       "price": 25000, 
       "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
     },

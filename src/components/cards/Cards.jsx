@@ -62,7 +62,7 @@ const Cards = () => {
     return (
        <div>
            <h1 className="font-bold text-3xl text-center text-[#1C1B1B] p-12">Course Registration</h1>
-         <div className="w-[90%] mx-auto flex justify-between gap-6">
+         <div className="w-[90%]  mx-auto flex-col lg:flex-row flex justify-between gap-6">
            
          
              {/* <Card></Card> */}
@@ -71,7 +71,7 @@ const Cards = () => {
                 cards.map(card=><Card key={card.id} handleSelect={handleSelect} card={card}></Card>)
              }
             </div>
-            <div className=" w-3/12">
+            <div className=" lg:w-3/12">
             <div className=" bg-white rounded-lg">
              <h1  className="font-semibold text-center mx-auto py-4 text-[#2F80ED] border-b-2 border-gray-400 w-[80%] text-normal">Credit Hour Remaining  {remaining} hr</h1>
              <h1  className="font-semibold  mx-auto py-4 text-black border-b-2 border-gray-400 w-[80%] text-normal">Course Name</h1>
