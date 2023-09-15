@@ -57,7 +57,7 @@ const Cards = () => {
     
     }
 
-    console.log(total)
+    // console.log(total)
   
     return (
        <div>
