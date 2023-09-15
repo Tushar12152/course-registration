@@ -15,7 +15,7 @@ const Cards = () => {
 // console.log(cart)
     useEffect(()=>{
         const loadData= async()=>{
-               const res=await fetch('/public/data.json')
+               const res=await fetch('/data.json')
                const data=await res.json()
                setCards(data)
         }
@@ -27,6 +27,7 @@ const Cards = () => {
     //    isTrue?alert('selected'):setCart([...cart,card])
       let credit=card.credit
       let total=card.price;
+      const fixedCredit=20;
        if(isTrue){
          return toast.warn( 'This course is already selected',{})
        }
@@ -36,19 +37,31 @@ const Cards = () => {
              total +=item.price
 
           }) 
+          if(fixedCredit<0){
+            return 
+          }
+          else{
+            if(credit<=fixedCredit){
+              setCredit(credit)
+            }
+            else{
+              return toast.warn('Total credit Hour limit is 20')
+            }
+        setTotal(total)
+          }
         
         setCart([...cart,card])
        }
     
-       const fixedCredit=20;
+
     //    credit>fixedCredit?alert('20 up'):setCredit(credit)
-    if(credit>fixedCredit){
-        return  toast.warn('Total credit limit is 20')
-    }
-    else{
-        setCredit(credit)
-        setTotal(total)
-    }
+    // if(credit>fixedCredit){
+    //     return  toast.warn('Total credit limit is 20')
+    // }
+    // else{
+    //     setCredit(credit)
+    //     setTotal(total)
+    // }
 
     const remaining=fixedCredit-credit;
     remaining<0? toast.warn('Remaining hour will not negative'):setRemaining(remaining)
