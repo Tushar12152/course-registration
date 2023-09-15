@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css'
 const Cards = () => {
     const [cards,setCards]=useState([])
     const [cart,setCart]=useState([])
+    const [credit,setCredit]=useState(0)
+
 // console.log(cart)
     useEffect(()=>{
         const loadData= async()=>{
@@ -21,16 +23,32 @@ const Cards = () => {
     const handleSelect=(card)=>{
        const isTrue=cart.find(item=>item.id===card.id)
     //    isTrue?alert('selected'):setCart([...cart,card])
+      let credit=card.credit
        if(isTrue){
-         return toast.warn( 'This course is selected',{})
+         return toast.warn( 'This course is already selected',{})
        }
        else{
+          cart.forEach(item=>{
+            credit+=item.credit
+          }) 
+        
         setCart([...cart,card])
        }
+    
+       const fixedCredit=20;
+    //    credit>fixedCredit?alert('20 up'):setCredit(credit)
+    if(credit>fixedCredit){
+      return  toast.warn('Total credit limit is 20')
+    }
+    else{
+        setCredit(credit)
+    }
+
          
        
     }
 
+    console.log(credit)
   
     return (
        <div>
@@ -56,7 +74,7 @@ const Cards = () => {
                       cart.map((name,idx)=><li className="  list-decimal mx-auto w-[80%]" key={idx}>{name.course_name}</li>)
                  }
                  <ToastContainer></ToastContainer>
-             <h1  className="font-normal  mx-auto py-4 text-black border-b-2 border-gray-400 w-[80%] text-normal">Total Credit Hour : {}</h1>
+             <h1  className="font-normal  mx-auto py-4 text-black border-b-2 border-gray-400 w-[80%] text-normal">Total Credit Hour : {credit}</h1>
              <h1 className="font-normal  mx-auto py-4 text-black  w-[80%] text-normal">Total Price : {} USD</h1>
             </div>
             </div>

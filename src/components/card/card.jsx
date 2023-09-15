@@ -15,9 +15,9 @@ const Card = ({card,handleSelect}) => {
                      <BsCurrencyDollar></BsCurrencyDollar>
                      <h2 className='text-gray-600'> Price:{price}</h2>
                      </div>
-                     <div className='flex items-center gap-2 p-4'>
+                     <div className='flex items-center gap-1  p-2'>
                         <BsBook></BsBook>
-                     <h2 className='text-gray-600 '>Credit:{credit}</h2>
+                     <h2 className='text-gray-600 '>Credit:{credit} hr</h2>
                      </div>
                  </div>
                 <div className='pb-4'>
