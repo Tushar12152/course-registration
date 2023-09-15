@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import { BsCurrencyDollar,BsBook } from 'react-icons/bs'
-const Card = ({card}) => {
-    const {img,course_name,details,price,credit}=card
-    console.log(card)
+const Card = ({card,handleSelect}) => {
+    const {img,course_name,details,price,credit}=card;
+    
 
     return (
         <div>
@@ -21,7 +21,7 @@ const Card = ({card}) => {
                      </div>
                  </div>
                 <div className='pb-4'>
-                <button className='w-5/6 ml-4 p-2 rounded-lg text-white bg-[#2F80ED]'>Select</button>
+                <button onClick={()=>handleSelect(card)} className='w-5/6 ml-4 p-2 rounded-lg text-white bg-[#2F80ED]'>Select</button>
                 </div>
 
              </div>
@@ -31,5 +31,6 @@ const Card = ({card}) => {
 
 Card.propTypes={
     card:PropTypes.object.isRequired,
+    handleSelect:PropTypes.func.isRequired,
 }
 export default Card;
